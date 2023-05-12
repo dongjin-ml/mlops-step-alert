@@ -1,0 +1,6 @@
+
+FROM 366743142698.dkr.ecr.ap-northeast-2.amazonaws.com/sagemaker-scikit-learn:1.0-1-cpu-py3
+RUN pip install -U pip
+RUN pip install -U sagemaker
+RUN pip3 install pyathena awswrangler 
+ENV PYTHONUNBUFFERED=TRUE
