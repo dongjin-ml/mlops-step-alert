@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - pip3 install --upgrade --force-reinstall awscli sagemaker
+      
+  build:
+    commands:
+      - set -e
+      - echo "Starting SageMaker Pipeline for Train Execution"
+      - export PYTHONUNBUFFERED=TRUE
+      - pushd pipeline
+      - python3 mlops_pipeline.py
+      - echo "Create/Update of the SageMaker Pipeline and execution completed."
+      #- popd
+
+artifacts:
+  files:
+    - '**/*'
