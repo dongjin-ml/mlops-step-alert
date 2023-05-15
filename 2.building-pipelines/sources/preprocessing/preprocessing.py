@@ -21,7 +21,6 @@ class preprocess():
         copy_tree(input_data_path, os.path.join(self.args.prefix_prep, "output", "validation"))
         copy_tree(input_data_path, os.path.join(self.args.prefix_prep, "output", "test"))
                
-        
     def execution(self, ):
                 
         input_data_path = os.path.join(self.args.prefix_prep, "input")

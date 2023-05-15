@@ -70,7 +70,7 @@ class pipeline_tr():
         if self.args.config.get_value("LOCALMODE", "mode", dtype="boolean"): self.pipeline_session = LocalPipelineSession()
         else: self.pipeline_session = PipelineSession()
         
-        self.pm.put_params(key=self.strPrefix + "PIPELINE-NAME", value=self.strPipelineName, overwrite=True)
+        self.pm.put_params(key="-".join([self.strPrefix, "PIPELINE-NAME"]), value=self.strPipelineName, overwrite=True)
         
         print (f" == Envrionment parameters == ")
         print (f"   SAGEMAKER-ROLE-ARN: {self.strExcutionRole}")
